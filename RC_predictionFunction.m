@@ -20,6 +20,7 @@ function RC_predictionFunction(imagePattern, outputFolder)
         predictedLabels = semanticseg(img, trainedNet);
         coloredLabels = MapLabels2Colors(predictedLabels);
 
+
         % Create figure for just the predicted mask
         fig = figure('visible', 'off');
         imshow(coloredLabels)
