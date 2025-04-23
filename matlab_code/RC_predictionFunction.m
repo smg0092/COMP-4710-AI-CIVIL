@@ -1,4 +1,4 @@
-function RunSegmentation(imagePattern, outputFolder)
+function RC_predictionFunction(imagePattern, outputFolder)
 
     % Load the trained network
     load('RCDetection_v1.mat')
