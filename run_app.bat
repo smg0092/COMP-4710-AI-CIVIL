@@ -22,6 +22,6 @@ pip install -r requirements.txt
 
 :: Launch the GUI
 echo Launching Civil AI App...
-python main.py
+python ViewForCivilAI_GUI_Controller.py
 
 pause
