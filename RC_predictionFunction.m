@@ -20,14 +20,18 @@ function RC_predictionFunction(imagePattern, outputFolder)
         predictedLabels = semanticseg(img, trainedNet);
         coloredLabels = MapLabels2Colors(predictedLabels);
 
-
-        % Create figure for just the predicted mask
+        % Create a figure but don't show it 
         fig = figure('visible', 'off');
+        subplot(1, 2, 1)
+        imshow(img)
+        title('Original Image')
+
+        subplot(1, 2, 2)
         imshow(coloredLabels)
         title('Predicted Mask')
 
         % Set figure size
-        set(gcf, 'position', [1 41 1024 1024])  % Optional: control figure size
+        set(gcf, 'position', [1 41 1824 1103]*0.8)
 
         % Save the figure as a .png file
         [~, baseName, ~] = fileparts(files(ii).name);
