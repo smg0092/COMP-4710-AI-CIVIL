@@ -136,10 +136,14 @@ def on_folder_label_click(event):
         show_image(current_folder_files[0])
 
 
-    # Add Run Prediction button next to HISTORY label
+    # Set up font parameters for Choose Output Folder and Run Prediction button
+    from tkinter import font
+    button_font = font.Font(family="Arial", size=20)
+
+    # Add Run Prediction button next to HISTORY label       ######################################################################################################
     if not run_button:
-        run_button = tk.Button(_w.get_top(), text="Choose Output Folder and Run Prediction", command=lambda: run_prediction(folder))
-        run_button.place(relx=0.85, rely=0.035, width=250, height=25)
+        run_button = tk.Button(_w.get_top(), text="Choose Output Folder and Run Prediction", command=lambda: run_prediction(folder), bg='#314567', fg='#ffffff', font=button_font)
+        run_button.place(relx=0.22, rely=0.88, width=520, height=40)
 
 def run_prediction(input_folder):
     output_folder = filedialog.askdirectory(title="Select Output Folder")
